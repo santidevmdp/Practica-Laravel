@@ -1,146 +1,44 @@
-@extends('services.templates.master')
+@include('services.templates.partials.header')
 
-@section('content')
-
-    <h2 class="p-3 text-center">Impuestos y Servicios</h2>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <form class="form-inline float-right">
-                <div class="form-group">
-                    <label for="filterSearch" class="mr-3 sr-only">Buscador</label>
-                    <input type="text" class="form-control mr-3" id="filterSearch" aria-describedby="filtra-res" placeholder="Buscando...">
-                    
-                </div>
-                <button type="button" class="btn btn-primary float-right">Buscar</button>
-            </form>
-            
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>About this page</h2>
+            <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+            <ul>
+              <li>Clickable nav links that smooth scroll to page sections</li>
+              <li>Responsive behavior when clicking nav links perfect for a one page website</li>
+              <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
+              <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+            </ul>
+          </div>
         </div>
-        <div id="filterTags" class="ml-3">
-            <span class="badge badge-pill badge-primary">Impuesto
-                <button type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </span>
-            <span class="badge badge-pill badge-secondary">ARBA
-                <button type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </span>
-            <span class="badge badge-pill badge-success">2018
-                <button type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </span>
-            <span class="badge badge-pill badge-success">05
-                <button type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </span>
+      </div>
+    </section>
+    
+    <section id="services" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Services we offer</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+          </div>
         </div>
-        
-    </div>
-    <div class="row mt-5">
-        <div class="col-sm-12">
-            <table class="table table-hover table-striped">
-                <thead>
-                    <tr>
-                    <th scope="col">Codigo</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Institucion</th>
-                    <th scope="col">Fecha Emision</th>
-                    <th scope="col">Fecha Vencimiento</th>
-                    <th scope="col">Total a Pagar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th scope="row">254-70472 4</th>
-                    <td>Impuesto</td>
-                    <td>ARBA</td>
-                    <td>10/05/2018</td>
-                    <td>10/06/2018</td>
-                    <td>667</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2547-748772 4</th>
-                    <td>Impuesto</td>
-                    <td>ABL</td>
-                    <td>10/07/2018</td>
-                    <td>10/08/2018</td>
-                    <td>350</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">20-772 7</th>
-                    <td>Servicio</td>
-                    <td>Gas</td>
-                    <td>15/02/2018</td>
-                    <td>15/03/2018</td>
-                    <td>120</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">254-70472 4</th>
-                    <td>Impuesto</td>
-                    <td>ARBA</td>
-                    <td>10/05/2018</td>
-                    <td>10/06/2018</td>
-                    <td>667</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2547-748772 4</th>
-                    <td>Impuesto</td>
-                    <td>ABL</td>
-                    <td>10/07/2018</td>
-                    <td>10/08/2018</td>
-                    <td>350</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">20-772 7</th>
-                    <td>Servicio</td>
-                    <td>Gas</td>
-                    <td>15/02/2018</td>
-                    <td>15/03/2018</td>
-                    <td>120</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">254-70472 4</th>
-                    <td>Impuesto</td>
-                    <td>ARBA</td>
-                    <td>10/05/2018</td>
-                    <td>10/06/2018</td>
-                    <td>667</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2547-748772 4</th>
-                    <td>Impuesto</td>
-                    <td>ABL</td>
-                    <td>10/07/2018</td>
-                    <td>10/08/2018</td>
-                    <td>350</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">20-772 7</th>
-                    <td>Servicio</td>
-                    <td>Gas</td>
-                    <td>15/02/2018</td>
-                    <td>15/03/2018</td>
-                    <td>120</td>
-                    </tr>
-                </tbody>
-            </table>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Contact us</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-@endsection
+@include('services.templates.partials.footer')
 
 
-@section('helper')
-    <div class="row mt-5 pt-5">
-        <div class="col-sm-12">
-            <div class="alert alert-primary" role="alert">
-                Encuentre de manera facil si pago o no una factura
-            </div>
-        </div>
-    </div>
-
-@endsection
