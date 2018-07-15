@@ -1,4 +1,4 @@
-@extends('services.templates.master')
+@extends('layouts.app')
 
 @section('content')
 
@@ -42,102 +42,104 @@
     </div>
     <div class="row mt-5">
         <div class="col-sm-12">
-            <table class="table table-hover table-striped">
-                <thead>
-                    <tr class="text-center">
-                    <th scope="col">Codigo</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Institucion</th>
-                    <th scope="col">Fecha Emision</th>
-                    <th scope="col">Fecha Vencimiento</th>
-                    <th scope="col">Total a Pagar</th>
-                    <th scope="col">Estado</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <tr data-toggle="modal" data-id="1" data-target=".tableModal" style="cursor:pointer">
-                    <th scope="row" class="text-left">254-70472 4</th>
-                    <td>Impuesto</td>
-                    <td>ARBA</td>
-                    <td>10/05/2018</td>
-                    <td>10/06/2018</td>
-                    <td>667</td>
-                    <td><i class="fas fa-check text-success"></i></td>
-                    </tr>
-                    <tr data-toggle="modal" data-id="2" data-target=".tableModal" style="cursor:pointer">
-                    <th scope="row" class="text-left">2547-748772 4</th>
-                    <td>Impuesto</td>
-                    <td>ABL</td>
-                    <td>10/07/2018</td>
-                    <td>10/08/2018</td>
-                    <td>350</td>
-                    <td><i class="fas fa-check text-success"></i></td>
-                    </tr>
-                    <tr data-toggle="modal" data-id="3" data-target=".tableModal" style="cursor:pointer">
-                    <th scope="row" class="text-left">20-772 7</th>
-                    <td>Servicio</td>
-                    <td>Gas</td>
-                    <td>15/02/2018</td>
-                    <td>15/03/2018</td>
-                    <td>120</td>
-                    <td><i class="fas fa-times text-danger"></i></td>
-                    </tr>
-                    <tr data-toggle="modal" data-id="4" data-target=".tableModal" style="cursor:pointer">
-                    <th scope="row" class="text-left">254-70472 4</th>
-                    <td>Impuesto</td>
-                    <td>ARBA</td>
-                    <td>10/05/2018</td>
-                    <td>10/06/2018</td>
-                    <td>667</td>
-                    <td><i class="fas fa-check text-success"></i></td>
-                    </tr>
-                    <tr data-toggle="modal" data-id="5" data-target=".tableModal" style="cursor:pointer">
-                    <th scope="row" class="text-left">2547-748772 4</th>
-                    <td>Impuesto</td>
-                    <td>ABL</td>
-                    <td>10/07/2018</td>
-                    <td>10/08/2018</td>
-                    <td>350</td>
-                    <td><i class="fas fa-times text-danger"></i></td>
-                    </tr>
-                    <tr data-toggle="modal" data-id="6" data-target=".tableModal" style="cursor:pointer">
-                    <th scope="row" class="text-left">20-772 7</th>
-                    <td>Servicio</td>
-                    <td>Gas</td>
-                    <td>15/02/2018</td>
-                    <td>15/03/2018</td>
-                    <td>120</td>
-                    <td><i class="fas fa-times text-danger"></i></td>
-                    </tr>
-                    <tr data-toggle="modal" data-id="7" data-target=".tableModal" style="cursor:pointer">
-                    <th scope="row" class="text-left">254-70472 4</th>
-                    <td>Impuesto</td>
-                    <td>ARBA</td>
-                    <td>10/05/2018</td>
-                    <td>10/06/2018</td>
-                    <td>667</td>
-                    <td><i class="fas fa-times text-danger"></i></td>
-                    </tr>
-                    <tr data-toggle="modal" data-id="8" data-target=".tableModal" style="cursor:pointer">
-                    <th scope="row" class="text-left">2547-748772 4</th>
-                    <td>Impuesto</td>
-                    <td>ABL</td>
-                    <td>10/07/2018</td>
-                    <td>10/08/2018</td>
-                    <td>350</td>
-                    <td><i class="fas fa-check text-success"></i></td>
-                    </tr>
-                    <tr data-toggle="modal" data-id="9" data-target=".tableModal" style="cursor:pointer">
-                    <th scope="row" class="text-left">20-772 7</th>
-                    <td>Servicio</td>
-                    <td>Gas</td>
-                    <td>15/02/2018</td>
-                    <td>15/03/2018</td>
-                    <td>120</td>
-                    <td><i class="fas fa-check text-success"></i></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Institucion</th>
+                            <th scope="col">Fecha Emision</th>
+                            <th scope="col">Fecha Vencimiento</th>
+                            <th scope="col">Total a Pagar</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr data-toggle="modal" data-id="1" data-target=".tableModal" style="cursor:pointer">
+                            <th scope="row" class="text-left">254-70472 4</th>
+                            <td>Impuesto</td>
+                            <td>ARBA</td>
+                            <td>10/05/2018</td>
+                            <td>10/06/2018</td>
+                            <td>667</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr data-toggle="modal" data-id="2" data-target=".tableModal" style="cursor:pointer">
+                            <th scope="row" class="text-left">2547-748772 4</th>
+                            <td>Impuesto</td>
+                            <td>ABL</td>
+                            <td>10/07/2018</td>
+                            <td>10/08/2018</td>
+                            <td>350</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr data-toggle="modal" data-id="3" data-target=".tableModal" style="cursor:pointer">
+                            <th scope="row" class="text-left">20-772 7</th>
+                            <td>Servicio</td>
+                            <td>Gas</td>
+                            <td>15/02/2018</td>
+                            <td>15/03/2018</td>
+                            <td>120</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                        </tr>
+                        <tr data-toggle="modal" data-id="4" data-target=".tableModal" style="cursor:pointer">
+                            <th scope="row" class="text-left">254-70472 4</th>
+                            <td>Impuesto</td>
+                            <td>ARBA</td>
+                            <td>10/05/2018</td>
+                            <td>10/06/2018</td>
+                            <td>667</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr data-toggle="modal" data-id="5" data-target=".tableModal" style="cursor:pointer">
+                            <th scope="row" class="text-left">2547-748772 4</th>
+                            <td>Impuesto</td>
+                            <td>ABL</td>
+                            <td>10/07/2018</td>
+                            <td>10/08/2018</td>
+                            <td>350</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                        </tr>
+                        <tr data-toggle="modal" data-id="6" data-target=".tableModal" style="cursor:pointer">
+                            <th scope="row" class="text-left">20-772 7</th>
+                            <td>Servicio</td>
+                            <td>Gas</td>
+                            <td>15/02/2018</td>
+                            <td>15/03/2018</td>
+                            <td>120</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                        </tr>
+                        <tr data-toggle="modal" data-id="7" data-target=".tableModal" style="cursor:pointer">
+                            <th scope="row" class="text-left">254-70472 4</th>
+                            <td>Impuesto</td>
+                            <td>ARBA</td>
+                            <td>10/05/2018</td>
+                            <td>10/06/2018</td>
+                            <td>667</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                        </tr>
+                        <tr data-toggle="modal" data-id="8" data-target=".tableModal" style="cursor:pointer">
+                            <th scope="row" class="text-left">2547-748772 4</th>
+                            <td>Impuesto</td>
+                            <td>ABL</td>
+                            <td>10/07/2018</td>
+                            <td>10/08/2018</td>
+                            <td>350</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr data-toggle="modal" data-id="9" data-target=".tableModal" style="cursor:pointer">
+                            <th scope="row" class="text-left">20-772 7</th>
+                            <td>Servicio</td>
+                            <td>Gas</td>
+                            <td>15/02/2018</td>
+                            <td>15/03/2018</td>
+                            <td>120</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div class="modal fade tableModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">

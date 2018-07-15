@@ -12,3 +12,7 @@ npm-debug.log
 yarn-error.log
 .env
 .env-example
+.vagrant
+/etc
+.idea/
+.DS_Store

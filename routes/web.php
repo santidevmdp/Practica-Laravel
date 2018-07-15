@@ -16,11 +16,15 @@
 });*/
 
 Route::get('/', function () {
-    return view('services.index');
+    return view('index');
 });
 
 Route::get('/servicios', function () {
     return view('services.servicios');
+});
+
+Route::get('/services', function () {
+    return view('services.services');
 });
 
 
