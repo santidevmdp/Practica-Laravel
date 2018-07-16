@@ -7,10 +7,13 @@
     <main role="main">
     
         @yield('showcase')
-
-        @yield('content')
-
+    {{--<div class="row">
+        <div class="col-12">--}}
+            @yield('content')
+        {{--</div>
+    </div>--}}
     </main>
+
     <footer class="container py-5">   
         @include('layouts.parcials.footer')
     </footer>
