@@ -15,16 +15,24 @@ class CreateFacturasTable extends Migration
     {
         Schema::create('facturas', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('tipo');
             $table->string('entidad');
             $table->integer('partida');
             $table->date('fIngreso');
             $table->date('fSalida');
+            $table->text('observaciones')->nullable();
             $table->decimal('deuda');
             $table->decimal('pagado');
             $table->decimal('balance');
-            $table->string('estado');
+            $table->enum('estados', ['SUCCESS', 'WARNING', 'DANGER'])->default('DANGER');
+            $table->enum('periodos', ['MENSUAL', 'BIMESTRAL', 'TRIMESTRAL','CUATRIMESTRAL','SEMESTRAL', 'ANUAL'])->default('MENSUAL');
             $table->timestamps();
+
+            //RELACIONES
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
