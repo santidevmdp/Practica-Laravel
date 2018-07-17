@@ -18,6 +18,7 @@ class CreateFacturasTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('tipo');
             $table->string('entidad');
+            $table->string('rango');
             $table->integer('partida');
             $table->date('fIngreso');
             $table->date('fSalida');

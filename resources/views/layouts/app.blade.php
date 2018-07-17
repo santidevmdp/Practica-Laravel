@@ -4,10 +4,10 @@
     </header>
     <main class="container mt-5 pt-3">
         <article class="row">
-            <section class="col-sm-10">
+            <section class="col-12 col-sm-10">
                 @yield('content')
             </section>
-            <section class="col-sm-2">
+            <section class="col-12 col-sm-2">
                 @yield('helper')
             </section>
         </article>

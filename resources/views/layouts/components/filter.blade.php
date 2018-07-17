@@ -1,5 +1,5 @@
             <div class="row py-3">
-                <div class="col-sm-12">
+                <div class="col-12 col-sm-12">
 
                     {{--Filtrado de resultados de la tabla--}}
                     <form class="form-inline float-right">

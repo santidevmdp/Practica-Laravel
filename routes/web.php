@@ -19,12 +19,16 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/servicios', function () {
+Route::get('/index', function () {
+    return view('services.index');
+});
+
+Route::get('/index/{$id}', function () {
     return view('services.servicios');
 });
 
-Route::get('/services', function () {
-    return view('services.services');
+Route::get('/nueva', function () {
+    return view('services.factura');
 });
 
 

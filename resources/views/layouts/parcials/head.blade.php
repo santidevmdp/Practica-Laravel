@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)https://getbootstrap.com/docs/4.0/examples/product/ -->
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
