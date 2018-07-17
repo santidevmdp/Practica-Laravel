@@ -16,9 +16,9 @@ class CreateFacturasTable extends Migration
         Schema::create('facturas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('tipo');
-            $table->string('entidad');
-            $table->string('rango');
+            $table->string('tipo', 10);
+            $table->string('entidad', 10);
+            $table->enum('alcances', ['NACIONAL', 'PROVINCIAL', 'MUNICIPAL'])->default('MUNICIPAL');
             $table->integer('partida');
             $table->date('fIngreso');
             $table->date('fSalida');
