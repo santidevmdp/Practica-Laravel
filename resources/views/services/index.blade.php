@@ -7,10 +7,33 @@
             @component('layouts.components.filter')
             
             @endcomponent
-            @component('layouts.components.table')
+            <div class="tabled pt-3 text-center">
+                @component('layouts.components.table')
+                
+                <div class="display-5">
+                    
+                    {{-- dd($facturas) --}}
+                        @foreach ( $facturas as $factura)
+                        
+                           <li>{{ dd($factura) }}</li>
+                        
+                        @endforeach
+                   
+                    
 
-            @endcomponent
-            
+                
+                </div>
+                    {{--@if ( $longitud>= 0)--}}
+                        
+                        {{--@foreach (range(0, $facturas) as $factura )--}}
+                            
+                            {{--@slot('dato')
+                                Tipo
+                            @endslot--}}
+                        {{--@endforeach--}}
+                   {{-- @endif--}}
+                @endcomponent
+            </div>
     @endsection
     @section('helper')
 

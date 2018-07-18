@@ -1,5 +1,7 @@
 <?php
 
+use App\Factura;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +21,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/index', function () {
-    return view('services.index');
-});
+/*Route::get('/index', function () {
+    foreach ($facturas as $factura) {
+        echo $factura->observaciones . "<br>";
+    }
+});*/
+
+Route::get('/index', 'AppController@index')->name('index');
 
 Route::get('/index/{$id}', function () {
     return view('services.servicios');

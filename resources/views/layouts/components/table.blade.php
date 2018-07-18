@@ -1,4 +1,4 @@
-<div class="tabled pt-3 text-center">
+
     <div class="thead bg-light">
         <div class="tr d-flex flex-row py-2">
             <div class="col th">Tipo</div>
@@ -7,6 +7,7 @@
             <div class="col th">Fecha Venc.</div>
             <div class="col th">Total a pagar</div>
             <div class="col th">Estado</div>
+            
         </div>
     </div>
     <div class="tbody" style="cursor:pointer">
@@ -43,4 +44,5 @@
             <div class="col td"><i class="fas fa-check text-success"></i></div>
         </div>
     </div>
-</div>
+    <div class="text-left">{{ $slot }}</div>
+    <div class="text-left"></div>
