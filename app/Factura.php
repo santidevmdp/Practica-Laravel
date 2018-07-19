@@ -17,4 +17,9 @@ class Factura extends Model
     {
         return $this->belongTo(User::class,'user_id');
     }
+
+    /*public function getActualAttribute($field)
+    {
+        return $this->attributes[$field];
+    }*/
 }
