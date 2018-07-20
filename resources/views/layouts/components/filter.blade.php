@@ -1,4 +1,3 @@
-            <div class="row py-3">
                 <div class="col-12 col-sm-12">
 
                     {{--Filtrado de resultados de la tabla--}}
@@ -14,6 +13,7 @@
                     {{--Tags de resultados de la tabla--}}
                     <div id="filterTags" class="ml-3 pt-2">
                         @component('layouts.components.badge')
+                        {{--Filter hace referencia al elemento filtrado o busqueda--}}
                             @slot('filter')
                                 Impuesto
                             @endslot
@@ -30,4 +30,4 @@
                         @endcomponent
                     </div>
                 </div>
-            </div>
+          

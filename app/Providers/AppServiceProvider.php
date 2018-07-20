@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength('191');
+
+        //COMPONENTES
+        Blade::component('layouts.components.alert', 'alert');
+        Blade::component('layouts.components.table', 'table');
+        Blade::component('layouts.components.filter', 'filter');
+        Blade::component('layouts.components.universal', 'universal');
+        Blade::component('layouts.components.logo', 'logo');
     }
 
     /**
@@ -26,4 +34,5 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
 }

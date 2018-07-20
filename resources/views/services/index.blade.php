@@ -4,11 +4,12 @@
 
         <h1 class="text-center">Listado de Registros</h1>
             {{--FILTRO DE TABLA CON TAG--}}
-            @component('layouts.components.filter')
-            @endcomponent
-
+            <div class="row py-3  container bg-white border rounded mx-auto">
+                @filter
+                @endfilter
+            </div>
             {{--TABLA CON DATOS DE FACTURACIONES--}}
-            <div class="tabled pt-3 text-center">
+            <div class="tabled py-3 mt-3 text-center container bg-white border rounded mx-auto">
                 <div class="thead bg-light">
                     <div class="tr d-flex flex-row py-2">
                         <div class="col th">Tipo</div>
@@ -20,9 +21,9 @@
                     </div>
                 </div>
                 <div class="tbody" style="cursor:pointer">
-                    @if(count($facturas) > 0)
+                    @if(count($facturas))
                         @foreach ( $facturas as $factura)
-                            @component('layouts.components.table')
+                            @table()
                                 @slot('id')
                                     {{$factura->id}}
                                 @endslot
@@ -41,10 +42,13 @@
                                 @slot('deuda')
                                     {{$factura->deuda}}
                                 @endslot
+                                @slot('icon')
+                                    {{$factura->icon}}
+                                @endslot
                                 @slot('estados')
                                     {{$factura->estados}}
                                 @endslot
-                            @endcomponent
+                            @endtable
                         @endforeach
                     @endif
                 </div>
@@ -53,10 +57,10 @@
     @endsection
     @section('helper')
         {{--HELPER CON NOTIFICACIONES UTILES 'EN DESARROLLO'--}}
-        @component('layouts.components.helper')
+        @alert()
             @slot('title')
                 Encuentre de manera facil si pago o no una factura
             @endslot
-        @endcomponent
+        @endalert
 
     @endsection

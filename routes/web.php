@@ -29,8 +29,11 @@ Route::get('/', function () {
 
 Route::get('/index', 'AppController@index')->name('index');
 
-Route::get('/index/{$id}', function () {
-    return view('services.servicios');
+Route::get('/index/4', function () {
+    return view('services.arba');
+});
+Route::get('/index/5', function () {
+    return view('services.edea');
 });
 
 Route::get('/nueva', function () {
