@@ -85,3 +85,34 @@
 .tbody .tr:hover{
   background-color: #d6d6d6;
 }
+
+
+
+/*.tr:after {
+    content: "";
+    display: table;
+     clear: both;
+}*/
+
+
+/**************FORMULARIO REGISTRO*/
+
+.tabForm {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  border: none; 
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}

@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('layouts.components.filter', 'filter');
         Blade::component('layouts.components.universal', 'universal');
         Blade::component('layouts.components.logo', 'logo');
+
     }
 
     /**
@@ -33,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+
     }
 
 }

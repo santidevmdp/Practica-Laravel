@@ -13,34 +13,33 @@ use App\Factura;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
 Route::get('/', function () {
     return view('index');
 });
 
-/*Route::get('/index', function () {
-    foreach ($facturas as $factura) {
-        echo $factura->observaciones . "<br>";
-    }
-});*/
+Auth::routes();
 
-Route::get('/index', 'AppController@index')->name('index');
+Route::group(['as' => 'app::', 'prefix' => 'index'], function () {
 
-Route::get('/index/4', function () {
-    return view('services.arba');
+    Route::get('/', 'AppController@index')->name('index');
+    Route::get('/create', 'AppController@create')->name('nuevo');
+    Route::post('/', 'AppController@store')->name('guardar');
+    Route::get('/{id}', 'AppController@show')->name('ver');
+    Route::get('/{id}/edit', 'AppController@edit')->name('editar');
+    Route::put('/{id}', 'AppController@update')->name('actualizar');
+
+    Route::delete('/{id}', 'AppController@destroy')->name('eliminar');
+
 });
-Route::get('/index/5', function () {
-    return view('services.edea');
-});
+
+//Route::resource('index', 'AppController');
 
 Route::get('/nueva', function () {
     return view('services.factura');
 });
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::get('/home', 'HomeController@index')->name('home');
+

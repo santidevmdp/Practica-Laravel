@@ -12,12 +12,12 @@
             <div class="tabled py-3 mt-3 text-center container bg-white border rounded mx-auto">
                 <div class="thead bg-light">
                     <div class="tr d-flex flex-row py-2">
-                        <div class="col th">Tipo</div>
-                        <div class="col th">Institucion</div>
-                        <div class="col th">Fecha Emision</div>
-                        <div class="col th">Fecha Venc.</div>
-                        <div class="col th">Total a pagar</div>
-                        <div class="col th">Estado</div>
+                        <div class="col-2 th">Tipo</div>
+                        <div class="col-3 th">Institucion</div>
+                        <div class="col-2 th">Fecha Emision</div>
+                        <div class="col-2 th">Fecha Venc.</div>
+                        <div class="col-2 th">Total a pagar</div>
+                        <div class="col-1 th">Estado</div>
                     </div>
                 </div>
                 <div class="tbody" style="cursor:pointer">
@@ -57,7 +57,7 @@
     @endsection
     @section('helper')
         {{--HELPER CON NOTIFICACIONES UTILES 'EN DESARROLLO'--}}
-        @alert()
+        @alert(['type' => 'danger'])
             @slot('title')
                 Encuentre de manera facil si pago o no una factura
             @endslot
