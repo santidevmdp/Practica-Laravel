@@ -31,12 +31,14 @@
                     @logo([
                             'mobile' => '12', 
                             'tablet' => '6', 
-                            'size' => 'display-5', 
+                            'size' => 'display-4', 
                             'margin' => 'mt-3',
                             'color' => 'text-primary',
                             
                         ])
-                        
+                        @slot('path')
+                            /image/
+                        @endslot
                         @slot('image')
                             {{$mostrar->entidad}}
                         @endslot
@@ -46,12 +48,17 @@
                                 jpeg
                             @endslot
                         @endif
+                        {{$mostrar->entidad}}
                     @endlogo
                 </div>
             </div>
-             <div class="col-12 col-md-12">
-                <div class="py-3 bg-primary"></div>
-            </div>
+            @separator()
+                @if ($mostrar->tipo == 'impuesto')
+                    @slot('color')
+                        primary
+                    @endslot
+                @endif
+            @endseparator
             <div class="col-12 col-md-6 pt-2">
                 <div class="row  border border-primary rounded">
                     @universal(['mobile' => '5', 'tablet' => '6'])
@@ -138,9 +145,13 @@
                     @enduniversal
                 </div>
             </div>
-            <div class="col-12 col-md-12">
-                <div class="py-3 bg-primary"></div>
-            </div>
+            @separator()
+                @if ($mostrar->tipo == 'impuesto')
+                    @slot('color')
+                        primary
+                    @endslot
+                @endif
+            @endseparator
             <div class="col-12 col-md-12">
                 <h5 class="pt-3">Observaciones</h5>
                 <p>{{$mostrar->observaciones}}</p>

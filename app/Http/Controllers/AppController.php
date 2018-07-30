@@ -22,7 +22,9 @@ class AppController extends Controller
     
     public function index() 
     {
-        $facturas=Factura::orderBy('id', 'DESC')->paginate(10);
+        $facturas=Factura::orderBy('id', 'DESC')
+                ->where('user_id', auth()->user()->id)
+                ->paginate(10);
         
         //$attributes = array_keys((array)$facturas);
         return view('services.index', compact('facturas'));
@@ -30,19 +32,25 @@ class AppController extends Controller
     }
     public function create() 
     {
-        /*$facturas=Factura::find();*/
-        
-        return view('services.factura', compact('facturas'));
+        /*$alcances=Factura::orderBy('alcances', 'ASC')->pluck('alcances', 'id');
+        $estados=Factura::orderBy('estados', 'ASC')->pluck('estados', 'id');
+        $periodos=Factura::orderBy('periodos', 'ASC')->pluck('periodos', 'id');*/
+
+        $registros = ['Impuesto', 'Servicio']; 
+        $alcances = [ 'Municipal', 'Provincial', 'Nacional' ];
+        $instituciones = [ 'ARBA', 'EDEA', 'Bco Saenz', 'ABL', 'Naranja' ];
+        $periodos = [ 'Mensual', 'Bimestral', 'Trimestral', 'Cuatrimestral', 'Semestral', 'Anual' ];
+        $estados = [ 'PAGADO', 'EN CURSO', 'NO PAGO' ];
+
+        return view('services.factura', compact('registros', 'alcances', 'instituciones', 'periodos', 'estados'));
         
     }
     public function store(Request $request) 
     {
-        $factura = new Factura;
-        $factura->nUsuario = $request->input('nUsuario');
+        $factura = Factura::create($request->all());
         
-
-        
-        //return view('services.factura', compact('facturas'));*/
+        return redirect()->route('app::editar', $factura->id)
+                        ->with('info', 'Factura creada con exito');
         
     }
     public function show($id) 
@@ -54,17 +62,20 @@ class AppController extends Controller
     }
     public function edit($id) 
     {
-        /*$facturas=Factura::find($id);
+        $facturas=Factura::find($id);
+        //$facturas=Factura::orderBy('id', 'ASC');
         
-        return view('services.vista', compact('facturas'));*/
+        return view('services.editar', compact('facturas'));
         
     }
     
     public function update(Request $request, $id) 
     {
-        /*$facturas=Factura::find();
-        
-        return view('services.factura', compact('facturas'));*/
+        $facturas=Factura::find($id);
+        $factura->fill($request->all())->save();
+
+        return redirect()->route('app::editar', $factura->id)
+                        ->with('info', 'Factura actualizada con exito');
         
     }
 

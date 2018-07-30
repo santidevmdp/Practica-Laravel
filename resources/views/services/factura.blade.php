@@ -4,44 +4,41 @@
 
         <div class="row bg-white border rounded mx-auto mt-3">
             <div class="container">
-                <form id="regForm" action="" class="col-12 col-md-12 pt-2">
+                {!! Form::open(['route' => 'app::guardar', 'class' => 'col-12 col-md-12 pt-2', 'id' => 'regForm']) !!}
                     <h2 class="text-center">Registro de pagos</h2>
                     
                     <div class="tabForm pt-2">
-                        
+                        {{ Form::hidden('user_id', auth()->user()->id) }}
                             <div class="row">
-                                <div class="col-12 col-md-6 pt-2">
+                                <div class="col-12 col-md-4 pt-2">
                                     <div class="form-group">
-                                        <label for="tipoRegistro">Tipo de registro</label>
-                                        <select class="form-control" id="tipoRegistro" name="tipoRegistro">
-                                        <option value="1">Impuesto</option>
-                                        <option value="2">Servicio</option>
-                                        </select>
+                                        {{ Form::label('tipoRegistro', 'Tipo de registro') }}
+                                        {{ Form::select('tipoRegistro', $registros, null, ['class' => 'form-control', 'id' => 'tipoRegistro']) }}
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 pt-2">
+                                <div class="col-12 col-md-4 pt-2">
                                     <div class="form-group">
-                                        <label for="tipoInstitucion">Nombre de empresa o institucion</label>
-                                        <select class="form-control" id="tipoInstitucion" name="tipoInstitucion">
-                                        <option value="1">ARBA</option>
-                                        <option value="2">EDEA</option>
-                                        <option value="3">Bco Saenz</option>
-                                        <option value="4">ABL</option>
-                                        <option value="5">Naranja</option>
-                                        </select>
+                                        {{ Form::label('tipoAlcance', 'Alcance') }}
+                                        {{ Form::select('tipoAlcance', $alcances, null, ['class' => 'form-control', 'id' => 'tipoAlcance']) }}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4 pt-2">
+                                    <div class="form-group">
+                                        {{ Form::label('tipoInstitucion', 'Nombre de empresa o institucion') }}
+                                        {{ Form::select('tipoInstitucion', $instituciones, null, ['class' => 'form-control', 'id' => 'tipoInstitucion']) }}
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-12 pt-2  border border-success rounded">
                                 <div class="form-group">
-                                    <label for="nUsuario">N° Partida o Usuario</label>
-                                    <input type="text" class="form-control" id="nUsuario" name="nUsuario" placeholder="045-049369-4">
+                                    {{ Form::label('nUsuario', 'N° Partida o Usuario') }}
+                                    {{ Form::text('nUsuario', null, ['class' => 'form-control', 'id' => 'nUsuario', 'placeholder' => 'ej: 045-049369-4']) }}
                                 </div>   
                             </div>
                         
                     </div>
                     
-                    <div class="mt-3 py-3 bg-success"></div>
+                    <!--<div class="mt-3 py-3 bg-success"></div>-->
                     
                     <!--AGREGAR factura de entrada opcional ingreso manual, automatico ingreso fecha actual -->
                     <!--AGREGAR cuotas al elegir pagos mensuales, bimestrales o por numero -->
@@ -50,22 +47,16 @@
                         <div class="row">
                             <div class="col-12 col-md-6 my-2">
                                 <div class="form-group">
-                                    <label for="fSalida">Vencimiento</label>
-                                    <input type="date" class="form-control" id="fSalida" name="fSalida">
+                                    {{ Form::label('fSalida', 'Fecha de Vencimiento') }}
+                                    <!--<label for="fSalida">Vencimiento</label>
+                                    <input type="date" class="form-control" id="fSalida" name="fSalida">-->
+                                    {{ Form::date('fSalida', \Carbon\Carbon::now()->format('d-m-Y')) }}
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 my-2">
                                 <div class="form-group">
-                                    <label for="tipoInstitucion">Periodo de pago</label>
-                                    <select class="form-control" id="tipoInstitucion" name="tipoInstitucion">
-                                        <option value="1" selected>Mensual</option>
-                                        <option value="2">Bimestral</option>
-                                        <option value="3">Trimestral</option>
-                                        <option value="4">Cuatrimestral</option>
-                                        <option value="5">Semestral</option>
-                                        <option value="6">Anual</option>
-                                        <option value="7">Otro</option>
-                                    </select>
+                                    {{ Form::label('periodo', 'Periodo de pago') }}
+                                    {{ Form::select('periodo', $periodos, null, ['class' => 'form-control', 'id' => 'periodo']) }}
                                 </div>
                             </div>
                         
@@ -73,14 +64,14 @@
                                 <div class="row">
                                     <div class="col-12 col-md-6 my-2">
                                         <div class="form-group">
-                                            <label for="mensual">Mensual</label>
-                                            <input type="number" class="form-control" id="mensual" name="mensual">
+                                            {{ Form::label('periodo', 'Mensual') }}
+                                            {{ Form::number('periodo', null, ['class' => 'form-control', 'id' => 'mensual']) }}
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 my-2">
                                         <div class="form-group">
-                                            <label for="anual">Anual</label>
-                                            <input type="number" class="form-control" id="anual" name="anual">
+                                            {{ Form::label('periodo', 'Anual') }}
+                                            {{ Form::number('periodo', null, ['class' => 'form-control', 'id' => 'anual']) }}
                                         </div>
                                     </div>
                                 </div>
@@ -89,12 +80,8 @@
                                 <div class="row">
                                     <div class="col-12 col-md-6 my-2 justify-content-end">
                                         <div class="form-group">
-                                            <label for="estado">Estado</label>
-                                            <select class="form-control" id="estado" name="estado">
-                                            <option value="1">PAGADO</option>
-                                            <option value="2" selected>EN CURSO</option>
-                                            <option value="3">NO PAGO</option>
-                                            </select>
+                                            {{ Form::label('estado', 'Estado') }}
+                                            {{ Form::number('estado', null, ['class' => 'form-control', 'id' => 'estado']) }}
                                         </div>
                                     </div>
                                 </div>
@@ -107,16 +94,16 @@
                     <div class="tabForm">
                         <div class="col-12 col-md-12">
                             <div class="form-group mt-2">
-                                <label for="observaciones">Observaciones</label>
-                                <textarea class="form-control" id="observaciones" name="observaciones" rows="3" placeholder="Hasta ahora la app viene joya, calculo que el finde semana empiezo con jquery :D"></textarea>
+                                {{ Form::label('observaciones', 'Observaciones') }}
+                                {{ Form::textarea('observaciones', null, ['class' => 'form-control', 'id' => 'observaciones']) }}
                             </div>
                         </div>
                     </div>
                     <!--Controles formulario mobile y tablet-->
                     <div style="overflow:auto;">
                         <div class="text-right">
-                            <button class="btn btn-outline-secondary" type="button" id="prevBtn" onclick="nextPrev(-1)">Atras</button>
-                            <button class="btn btn-warning" type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+                            <button class="btn btn-outline-secondary mt-2" type="button" id="prevBtn" onclick="nextPrev(-1)">Atras</button>
+                            <button class="btn btn-warning mt-2" type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
                         </div>
                     </div>
                     <!-- Circles which indicates the steps of the form: -->
@@ -126,7 +113,8 @@
                         <span class="step bg-success"></span>
                         <span class="step bg-success"></span>
                     </div>
-                </form>
+                <!--</form>-->
+                {!! Form::close() !!}
             </div>
         </div>
 

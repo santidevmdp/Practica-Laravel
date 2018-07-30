@@ -49,6 +49,8 @@ $(function(){
     // This function will display the specified tab of the form ...
         var x = document.getElementsByClassName("tabForm");
         x[n].style.display = "block";
+
+        alert('hola viteh');
         
         // ... and fix the Previous/Next buttons:
         if (n == 0) {
@@ -66,6 +68,7 @@ $(function(){
     }
 
 function nextPrev(n) {
+
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tabForm");
   // Exit the function if any field in the current tab is invalid:
