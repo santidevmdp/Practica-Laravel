@@ -6,7 +6,7 @@
             <div class="container">
                 {!! Form::open(['route' => 'app::guardar', 'class' => 'col-12 col-md-12 pt-2', 'id' => 'regForm']) !!}
                     <h2 class="text-center">Registro de pagos</h2>
-                    
+                    @csrf
                     <div class="tabForm pt-2">
                         {{ Form::hidden('user_id', auth()->user()->id) }}
                             <div class="row">
@@ -100,19 +100,14 @@
                         </div>
                     </div>
                     <!--Controles formulario mobile y tablet-->
-                    <div style="overflow:auto;">
+                    <!--<div style="overflow:auto;">-->
                         <div class="text-right">
-                            <button class="btn btn-outline-secondary mt-2" type="button" id="prevBtn" onclick="nextPrev(-1)">Atras</button>
-                            <button class="btn btn-warning mt-2" type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+                            {{ Form::submit('Agregar', ['class' => 'btn btn-warning', 'id' => 'submit']) }}
+                            <!--<button class="btn btn-outline-secondary mt-2" type="button" id="prevBtn" onclick="nextPrev(-1)">Atras</button>
+                            <button class="btn btn-warning mt-2" type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>-->
                         </div>
-                    </div>
-                    <!-- Circles which indicates the steps of the form: -->
-                    <div class="mt-4 text-center">
-                        <span class="step bg-success"></span>
-                        <span class="step bg-success"></span>
-                        <span class="step bg-success"></span>
-                        <span class="step bg-success"></span>
-                    </div>
+                   <!-- </div>-->
+                    
                 <!--</form>-->
                 {!! Form::close() !!}
             </div>

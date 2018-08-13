@@ -97,12 +97,12 @@
 
 /**************FORMULARIO REGISTRO*/
 
-.tabForm {
+/*.tabForm {
   display: none;
-}
+}*/
 
 /* Make circles that indicate the steps of the form: */
-.step {
+/*.step {
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -110,9 +110,9 @@
   border-radius: 50%;
   display: inline-block;
   opacity: 0.5;
-}
+}*/
 
 /* Mark the active step: */
-.step.active {
+/*.step.active {
   opacity: 1;
-}
+}*/

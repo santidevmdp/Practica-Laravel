@@ -38,7 +38,7 @@ class AppController extends Controller
 
         $registros = ['Impuesto', 'Servicio']; 
         $alcances = [ 'Municipal', 'Provincial', 'Nacional' ];
-        $instituciones = [ 'ARBA', 'EDEA', 'Bco Saenz', 'ABL', 'Naranja' ];
+        $instituciones = [ 'ARBA', 'EDEA', 'BCOSAENZ', 'ABL', 'NARANJA' ];
         $periodos = [ 'Mensual', 'Bimestral', 'Trimestral', 'Cuatrimestral', 'Semestral', 'Anual' ];
         $estados = [ 'PAGADO', 'EN CURSO', 'NO PAGO' ];
 
