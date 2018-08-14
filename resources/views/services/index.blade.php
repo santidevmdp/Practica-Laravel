@@ -13,10 +13,10 @@
                 <div class="thead bg-light">
                     <div class="tr d-flex flex-row py-2">
                         <div class="col-2 th">Tipo</div>
-                        <div class="col-3 th">Institucion</div>
-                        <div class="col-2 th">Fecha Emision</div>
-                        <div class="col-2 th">Fecha Venc.</div>
-                        <div class="col-2 th">Total a pagar</div>
+                        <div class="col-3 th">Institución</div>
+                        <div class="col-2 th">Emisión</div>
+                        <div class="col-2 th">Vencimiento</div>
+                        <div class="col-2 th">Importe</div>
                         <div class="col-1 th">Estado</div>
                     </div>
                 </div>

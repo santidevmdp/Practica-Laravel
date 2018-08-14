@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AgregaIconFacturas extends Migration
+class CreatePartnersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AgregaIconFacturas extends Migration
      */
     public function up()
     {
-        Schema::table('facturas', function(Blueprint $table){
-            $table->enum('icon', ['CHECK', 'EXCLAMATION-TRIANGLE', 'TIMES'])->default('TIMES')->after('balance');
+        Schema::create('partners', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->string('cuenta', 40);
+            $table->string('cliente', 40)->nullable();
+
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class AgregaIconFacturas extends Migration
      */
     public function down()
     {
-        Schema::table('facturas', function(Blueprint $table){
-            $table->dropColumn('icon');
-        });
+        Schema::dropIfExists('partners');
     }
 }
