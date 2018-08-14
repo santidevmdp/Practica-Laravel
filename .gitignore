@@ -11,8 +11,11 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .env
-.env-example
+.env.example
 .vagrant
 /etc
 .idea/
 .DS_Store
+server.php
+artisan
+
