@@ -17,13 +17,10 @@ class CreateFacturasTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->enum('tipo', ['IMPUESTO', 'SERVICIO', 'OTROS'])->default('SERVICIO');
-            
             $table->enum('alcance', ['NACIONAL', 'PROVINCIAL', 'MUNICIPAL'])->default('MUNICIPAL');
-            
             $table->date('emision');
             $table->date('vencimiento');
             $table->text('observaciones')->nullable();
-            
             $table->enum('periodo', ['MENSUAL', 'BIMESTRAL', 'TRIMESTRAL','CUATRIMESTRAL','SEMESTRAL', 'ANUAL'])->default('MENSUAL');
             $table->timestamps();
 

@@ -8,9 +8,7 @@ class Entity extends Model
 {
     protected $table = 'entities';
 
-    protected $fillable = [
-        'title',
-    ];
+    protected $fillable = ['title'];
 
 
     public function factura()
